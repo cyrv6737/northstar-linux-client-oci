@@ -11,6 +11,10 @@ $ distrobox-create --name northstar --image ghcr.io/cyrv6737/northstar-client-st
 $ distrobox-enter -n northstar
 $ steam
 ```
+Set Titanfall 2 to run with NorthstarProton. Afterwards Northstar can be run with this one-liner assuming that your main instance of Steam is closed:
+```
+distrobox-enter -n northstar -- steam steam://rungameid/1237970
+```
 
 ## TODO
 

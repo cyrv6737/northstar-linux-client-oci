@@ -13,14 +13,18 @@ $ steam
 ```
 Set Titanfall 2 to run with NorthstarProton. Afterwards Northstar can be run with this one-liner assuming that your main instance of Steam is closed:
 ```
-distrobox-enter -n northstar -- steam steam://rungameid/1237970
+$ distrobox-enter -n northstar -- steam steam://rungameid/1237970
+```
+If EA App is displaying a blank window, run:
+```
+$ distrobox-enter -n northstar -- fix-ea-app
 ```
 
 ## TODO
 
-- [ ] Steam Images
+- [X] Steam Images
     - [X] Install NorthstarProton by default
-    - [ ] Find a solution for EA App protonfixes
+    - [X] Find a solution for EA App protonfixes
 - [X] Install LatencyFleX by default
 - [X] AMD Hardware
 - [ ] Nvidia Hardware

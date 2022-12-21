@@ -1,0 +1,14 @@
+FROM quay.io/fedora/fedora:37
+
+RUN sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y && \
+sudo dnf upgrade --refresh -y
+
+RUN sudo dnf install steam wget protontricks xorg-x11-drv-nvidia -y
+
+RUN mkdir -p /usr/share/steam/compatibilitytools.d && \
+wget https://github.com/cyrv6737/NorthstarProton/releases/download/v7.21-0/NorthstarProton-7.21.tar.gz && \
+tar -zxf NorthstarProton-7.21.tar.gz --directory /usr/share/steam/compatibilitytools.d
+
+RUN sudo dnf install 'dnf-command(copr)' -y && \
+sudo dnf copr enable kylegospo/LatencyFleX -y && \
+sudo dnf install latencyflex-vulkan-layer-dev -y

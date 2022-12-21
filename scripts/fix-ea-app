@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/protontricks 1237970 d3dcompiler_43 d3dcompiler_47 corefonts

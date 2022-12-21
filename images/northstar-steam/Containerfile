@@ -12,3 +12,6 @@ tar -zxf NorthstarProton-7.21.tar.gz --directory /usr/share/steam/compatibilityt
 RUN sudo dnf install 'dnf-command(copr)' -y && \
 sudo dnf copr enable kylegospo/LatencyFleX -y && \
 sudo dnf install latencyflex-vulkan-layer-dev -y
+
+COPY scripts/fix-ea-app /usr/bin
+RUN chmod +x /usr/bin/fix-ea-app
